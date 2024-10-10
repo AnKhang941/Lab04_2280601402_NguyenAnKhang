@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace Lab04_2280601402_NguyenAnKhang.Model
 {
-    public partial class QLSV : DbContext
+    public partial class Model1 : DbContext
     {
-        public QLSV()
-            : base("name=QLSV1")
+        public Model1()
+            : base("name=QLSV")
         {
         }
 
@@ -21,6 +21,10 @@ namespace Lab04_2280601402_NguyenAnKhang.Model
                 .HasMany(e => e.SinhViens)
                 .WithRequired(e => e.Khoa)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SinhVien>()
+                .Property(e => e.FullName)
+                .IsFixedLength();
         }
     }
 }

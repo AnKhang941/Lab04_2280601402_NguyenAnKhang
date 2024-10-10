@@ -10,7 +10,7 @@ namespace Lab04_2280601402_NguyenAnKhang.Model
     public partial class SinhVien
     {
         [Key]
-        [StringLength(50)]
+        [StringLength(20)]
         public string StudentID { get; set; }
 
         [Required]
